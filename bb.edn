@@ -1,0 +1,4 @@
+{:tasks
+ {install-deps (shell "pnpm i")
+  shadow-dev   {:task (shell "npx shadow-cljs watch client")}
+  tailwind-dev {:task (shell "npx tailwindcss -i ./public/css/input.css -o ./public/css/output.css --watch")}}}
