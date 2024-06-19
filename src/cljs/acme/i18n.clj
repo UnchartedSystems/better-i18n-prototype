@@ -7,13 +7,13 @@
 ;; TODO: integrate with shadow to watch translations.edn
 (def translations (read-string (slurp "translations.edn")))
 
-; NOTE: proof of concept for printing error lines
-;; (->> (line-seq (reader "src/main/compulsive/app.cljs"))
-;;      (drop 21)
-;;      (take 5)
-;;      (map println '("  22 |" "  23 |" "  24 >" "  25 |" "  26 |")))
+                                        ; NOTE: proof of concept for printing error lines
+#_(->> (line-seq (reader "src/cljs/acme/app.cljs"))
+     (drop 21)
+     (take 5)
+     (map println '("  22 |" "  23 |" "  24 >" "  25 |" "  26 |")))
 
-#_(println (meta #'translations))
+(println (meta #'translations))
 
 ;; NOTE proof of concept for getting absolute path
 (->> (file "translations.edn")
@@ -38,7 +38,7 @@
 
 ;; TODO: check if lang is key & collect log
 (defmacro translate [phrase]
-  #_(println (rc/slurp-resource &env "./translations.edn"))
+  (println (rc/slurp-resource &env "/ ../../translations.edn"))
   (if (contains? all-phrases phrase)
     (swap! used-phrases conj phrase)
     (add-log {:type     :no-phrase
