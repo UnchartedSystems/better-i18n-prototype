@@ -21,3 +21,5 @@
 
 (defn ^:export init []
   (rdom/render [root] (js/document.getElementById "root")))
+
+(i18n/compile-logs)
