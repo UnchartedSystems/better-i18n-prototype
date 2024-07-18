@@ -1,10 +1,10 @@
 {:deps true
 
  :dev-http {8080 "public"}
-
  :builds
  {:client
   {:target   :browser
+   :build-options {:cache-level :jars}
    :modules  {:main {:init-fn acme.app/init}}
    :devtools {:preloads      []
               :repl-pprint   false}}}}
