@@ -1,2 +1,3 @@
-#+title: i18n Prototype
+#i18n Prototype
+
 `bb shadow-dev` starts the application.
